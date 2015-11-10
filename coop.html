@@ -1,0 +1,42 @@
+<div class="col-sm-12" style="position: relative;">
+	<table class="table playground">
+		<thead>
+			<tr>
+				<th>SUPPLIER CO-OP AMOUNT</th>
+				<th>COMPETITOR NAME</th>
+
+				<th>COMPETITOR PRICE</th>
+
+				<th>OBSERVATION DATE</th>
+				
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="right"><span class="price">$<input type="number" step="0.01"
+							min="0" value=""></input></span></td>
+				<td><select 
+				ng-model="item.newCompRetail" 
+				ng-options="o.competitorPrice as o.competitorCode for o in  item.competitorDetailList">					
+						
+				</select></td>
+				<td>{{item.newCompRetail | currency}}</td>
+
+				<td>
+					<input class="date" type="date"
+					onkeydown="return false" ng-model="effectiveDate" ng-change="validateDate()">
+				</td>
+				<td>
+
+					<div class="row">
+						<div class="col-sm-1 button" style="width:42%" ng-click="applyCoop(item.id)">Apply</div>
+						<div class="col-sm-1 button" style="width:42%" ng-click="cancelCoop(item.id)">Remove</div>
+						
+					</div>
+				</td>
+			</tr>
+
+		</tbody>
+	</table>
+</div>
